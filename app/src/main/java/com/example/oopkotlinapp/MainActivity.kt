@@ -15,6 +15,9 @@ import com.example.oopkotlinapp.ui.theme.OOPKotlinAppTheme
 import com.example.oopkotlinapp.model.Person
 import com.example.oopkotlinapp.model.Employee
 import android.util.Log
+import com.example.oopkotlinapp.model.Manager
+import com.example.oopkotlinapp.model.printPersonSummary
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,8 @@ class MainActivity : ComponentActivity() {
 
         val person = Person("Jake", 22, "45 Somewhere Road")
         val employee = Employee("Jill", 29, "Nowhere Street", "05", "Level1")
+
+        val manager = Manager("Bob", 45, "Galaxy Road", "M01", "Sales")
 
         person.setAge(26)
 
@@ -31,10 +36,12 @@ class MainActivity : ComponentActivity() {
 
         Log.d("TEST", " ")
 
-        Log.d("TEST", employee.getDisplayName())
-        Log.d("TEST", employee.employeeId)
-        Log.d("TEST", employee.department)
+        printPersonSummary(employee)
+
         Log.d("TEST", " ")
+
+        printPersonSummary(manager)
+
 
 
 

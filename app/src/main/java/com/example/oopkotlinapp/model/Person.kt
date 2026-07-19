@@ -59,9 +59,12 @@ open class Person(name: String, age: Int, address: String) {
 
     }
 
-    fun printPersonSummary(person: Person) {
-        Log.d("TEST", person.getDisplayName())
-        Log.d("TEST","Age: ${person.getAge()}")
-        Log.d("TEST","Address: ${person.getAddress()}")
-    }
+
+
+}
+
+fun printPersonSummary(person: Person) {
+    Log.d("TEST", person.getDisplayName())
+    Log.d("TEST","Age: ${person.getAge()}")
+    Log.d("TEST","Address: ${person.getAddress()}")
 }
