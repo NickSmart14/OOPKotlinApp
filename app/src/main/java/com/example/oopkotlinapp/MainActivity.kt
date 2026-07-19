@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.oopkotlinapp.ui.theme.OOPKotlinAppTheme
 import com.example.oopkotlinapp.model.Person
+import com.example.oopkotlinapp.model.Employee
 import android.util.Log
 
 class MainActivity : ComponentActivity() {
@@ -20,11 +21,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val person = Person("Jake", 22, "45 Somewhere Road")
+        val employee = Employee("Jill", 29, "Nowhere Street", "05", "Level1")
 
-        person.SetAge(26)
+        person.setAge(26)
 
         Log.d("TEST", person.getDisplayName())
-        Log.d("TEST", person.GetAge().toString())
+        Log.d("TEST", person.getAge().toString())
+        Log.d("TEST", person.getAddress())
+
+        Log.d("TEST", " ")
+
+        Log.d("TEST", employee.getDisplayName())
+        Log.d("TEST", employee.employeeId)
+        Log.d("TEST", employee.department)
+        Log.d("TEST", " ")
+
+
 
 
         enableEdgeToEdge()

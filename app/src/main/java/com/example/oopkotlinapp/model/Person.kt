@@ -1,5 +1,7 @@
 package com.example.oopkotlinapp.model
 
+import android.util.Log
+
 open class Person(name: String, age: Int, address: String) {
     // Add private variables.
     private var name: String = ""
@@ -8,17 +10,17 @@ open class Person(name: String, age: Int, address: String) {
 
     init
     {
-        SetName(name)
-        SetAge(age)
-        SetAddress(address)
+        setName(name)
+        setAge(age)
+        setAddress(address)
     }
 
-    fun GetName(): String
+    fun getName(): String
     {
         return name
     }
 
-    fun SetName(name: String)
+    fun setName(name: String)
     {
         if (name.isNotBlank())
         {
@@ -26,24 +28,24 @@ open class Person(name: String, age: Int, address: String) {
         }
     }
 
-    fun GetAge(): Int
+    fun getAge(): Int
     {
         return age
     }
 
-    fun SetAge(age: Int)
+    fun setAge(age: Int)
     {
     if (age in 0..120)
     {
         this.age = age
     }
     }
-    fun GetAddress(): String
+    fun getAddress(): String
     {
         return address
     }
 
-    fun SetAddress(address: String)
+    fun setAddress(address: String)
     {
         if (address.isNotBlank())
         {
@@ -55,5 +57,11 @@ open class Person(name: String, age: Int, address: String) {
     open fun getDisplayName(): String {
             return "Person: $name"
 
+    }
+
+    fun printPersonSummary(person: Person) {
+        Log.d("TEST", person.getDisplayName())
+        Log.d("TEST","Age: ${person.getAge()}")
+        Log.d("TEST","Address: ${person.getAddress()}")
     }
 }
